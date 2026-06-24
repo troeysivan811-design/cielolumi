@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>For Cielo Lumi ❤️</title>
+    <!-- Menggunakan font Google Fonts agar tampil estetik -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            background: linear-gradient(to bottom, #ffe4e1, #ffb6c1);
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .container {
+            background: rgba(255, 255, 255, 0.9);
+            padding: 35px 25px;
+            border-radius: 24px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            backdrop-filter: blur(8px);
+            max-width: 400px;
+            width: 100%;
+            transition: all 0.5s ease;
+        }
+
+        /* Halaman Pertama (Cover) */
+        #coverPage {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .envelope-icon {
+            font-size: 4rem;
+            margin-bottom: 20px;
+            animation: float 2s infinite ease-in-out;
+            cursor: pointer;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+
+        .btn-open {
+            background-color: #d63384;
+            color: white;
+            padding: 12px 35px;
+            font-size: 1rem;
+            font-weight: 600;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            box-shadow: 0 4px 15px rgba(214, 51, 132, 0.3);
+            transition: all 0.3s ease;
+        }
+
+        .btn-open:hover {
+            transform: scale(1.05);
+            background-color: #c22575;
+        }
+
+        /* Halaman Kedua (Surat Utama) - Disembunyikan dulu */
+        #letterPage {
+            display: none;
+            opacity: 0;
+            transform: scale(0.9);
+            transition: all 0.5s ease;
+        }
+
+        #letterPage.show {
+            display: block;
+            opacity: 1;
+            transform: scale(1);
+        }
+
+        h1 {
+            color: #d63384;
+            font-size: 1.8rem;
+            margin-bottom: 15px;
+            font-weight: 700;
+        }
+
+        p {
+            color: #555;
+            font-size: 0.95rem;
+            margin-bottom: 25px;
+            line-height: 1.6;
+            text-align: justify;
+        }
+
+        .music-box {
+            margin-bottom: 25px;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+        }
+
+        /* Perbaikan Tombol Bertindihan */
+        .btn-group {
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
+            height: 60px; /* Memberikan ruang vertikal yang cukup */
+            width: 100%;
+        }
+
+        button.choice-btn {
+            padding: 12px 30px;
+            font-size: 1rem;
+            font-weight: 600;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            min-width: 110px;
+        }
+
+        #yesBtn {
+            background-color: #4caf50;
+            color: white;
+            transition: transform 0.2s;
+            z-index: 2; /* Menjaga agar tombol Yes selalu di atas */
+        }
+
+        #yesBtn:hover {
+            background-color: #45a049;
+            transform: scale(1.1);
+        }
+
+        #noBtn {
+            background-color: #f44336;
+            color: white;
+            z-index: 1;
+            /* Kita gunakan transition lembut saat tombol mulai menghindar */
+            transition: all 0.1s ease; 
+        }
+    </style>
+</head>
+<body>
+
+    <!-- CONTAINER UTAMA -->
+    <div class="container">
+        
+        <!-- HALAMAN 1: COVER DEPAN -->
+        <div id="coverPage">
+            <div class="envelope-icon" onclick="openLetter()">💝</div>
+            <h1>A Special Message</h1>
+            <p style="text-align: center; color: #777; margin-bottom: 20px;">Ada sebuah surat manis khusus untuk Lumi. Klik tombol di bawah untuk membuka...</p>
+            <button class="btn-open" onclick="openLetter()">Buka Surat ✨</button>
+        </div>
+
+        <!-- HALAMAN 2: ISI SURAT (Awalnya tersembunyi) -->
+        <div id="letterPage">
+            <h1>Dear Lumi</h1>
+            <p>I was just playing around on anon at first. I never expected that I'd actually fall for you. You know I'm not the type to rush, I really like taking things slow. 
+            But you changed that. Sharing our daily lives feels so normal now, and without even realizing it, you’ve become my safe space. I guess the only thing that scares me now is the thought of losing you. 
+            So lumi, will you be my boyfriend? let's live together and start our own place</p>
+
+            <!-- PLAYER MUSIK AUDIO BROWSER ASLI -->
+            <div class="music-box">
+                <!-- Gunakan tag audio agar lagu otomatis terputar saat surat dibuka (autoplay resmi) -->
+                <!-- TIPS: Silakan ganti URL di bawah dengan link file .mp3 lagu romantis pilihanmu -->
+                <audio id="bgMusic" loop controls style="width: 100%;">
+                    <source src="https://drive.google.com/file/d/1X7Ct8h0NNzRmQ6sUhx1sUf0DPm2amKhH/view?usp=drivesdk">
+                </audio>
+            </div>
+
+            <!-- TOMBOL PILIHAN (SUDAH DIPERBAIKI BERSEBELAHAN) -->
+            <div class="btn-group">
+                <button id="yesBtn" class="choice-btn" onclick="answerYes()">Yes!</button>
+                <button id="noBtn" class="choice-btn" onmouseover="moveButton()" onclick="moveButton()">No</button>
+            </div>
+        </div>
+
+    </div>
+
+    <script>
+        const telegramUsername = "monthlysb"; 
+        const message = "i already said yes to being your boyfriend! ❤️"; 
+
+        // Fungsi untuk membuka halaman surat dan mengaktifkan lagu
+        function openLetter() {
+            document.getElementById('coverPage').style.display = 'none';
+            const letter = document.getElementById('letterPage');
+            letter.style.display = 'block';
+            
+            // Trigger animasi fade-in lembut
+            setTimeout(() => {
+                letter.classList.add('show');
+            }, 50);
+
+            // Memutar musik otomatis begitu tombol buka surat di-klik
+            const music = document.getElementById('bgMusic');
+            music.play().catch(error => {
+                console.log("Autoplay dicegah oleh browser, user harus berinteraksi dulu.");
+            });
+        }
+
+        function answerYes() {
+            alert("Thank you. You can text your boyfriend now ❤️");
+            window.location.href = `https://t.me/${telegramUsername}?text=${encodeURIComponent(message)}`;
+        }
+
+        function moveButton() {
+            const noBtn = document.getElementById('noBtn');
+            
+            // Menghitung batas aman di dalam layar handphone agar tidak keluar batas/terpotong
+            const padding = 40;
+            const maxX = window.innerWidth - noBtn.offsetWidth - padding;
+            const maxY = window.innerHeight - noBtn.offsetHeight - padding;
+            
+            const randomX = Math.floor(Math.random() * maxX);
+            const randomY = Math.floor(Math.random() * maxY);
+            
+            // Ubah menjadi fixed agar bisa bebas loncat ke area layar mana saja begitu didekati
+            noBtn.style.position = 'fixed';
+            noBtn.style.left = randomX + 'px';
+            noBtn.style.top = randomY + 'px';
+        }
+    </script>
+
+</body>
+</html>
