@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>For Cielo Lumi ❤️</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            background: linear-gradient(to bottom, #ffe4e1, #ffb6c1);
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .container {
+            background: rgba(255, 255, 255, 0.85);
+            padding: 30px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            backdrop-filter: blur(5px);
+            max-width: 400px;
+            width: 100%;
+        }
+
+        h1 {
+            color: #d63384;
+            font-size: 2rem;
+            margin-bottom: 10px;
+        }
+
+        p {
+            color: #555;
+            font-size: 1.1rem;
+            margin-bottom: 25px;
+            line-height: 1.5;
+        }
+
+        .music-box {
+            margin-bottom: 20px;
+        }
+
+        /* Sembunyikan player asli agar rapi, atau biarkan kecil */
+        iframe {
+            border-radius: 12px;
+            margin-bottom: 15px;
+        }
+
+        .btn-group {
+            position: relative;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            height: 50px;
+            align-items: center;
+        }
+
+        button {
+            padding: 12px 30px;
+            font-size: 1rem;
+            font-weight: bold;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+
+        #yesBtn {
+            background-color: #4caf50;
+            color: white;
+        }
+
+        #yesBtn:hover {
+            background-color: #45a049;
+            transform: scale(1.1);
+        }
+
+        #noBtn {
+            background-color: #f44336;
+            color: white;
+            position: absolute;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Halo lumi</h1>
+        <p>I was just playing around on anon at first. I never expected that I'd actually fall for you. You know I'm not the type to rush, I really like taking things slow. 
+But you changed that. Sharing our daily lives feels so normal now, and without even realizing it, you’ve become my safe space. I guess the only thing that scares me now is the thought of losing you.
+So lumi, will you be my boyfriend? let's live together and start our own place </p>
+
+        <!-- LINK LAGU (Contoh pakai Spotify Embed, bisa diganti) -->
+        <div class="music-box">
+            <!-- Ganti src dengan link embed lagu pilihanmu (Spotify/YouTube) -->
+            <iframe src="https://open.spotify.com/track/4rHZZAmHpZrA3iH5zx8frV?si=yeZK9UQiQm-OO6U1EWYVVA" 
+                    width="100%" height="80" frameBorder="0" allowfullscreen="" 
+                    allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy">
+            </iframe>
+        </div>
+
+        <!-- TOMBOL PILIHAN -->
+        <div class="btn-group">
+            <button id="yesBtn" onclick="answerYes()">Yes!</button>
+            <button id="noBtn" onmouseover="moveButton()" onclick="moveButton()">No</button>
+        </div>
+    </div>
+
+    <script>
+        // I think you already know who sent this. Yeah, it’s me
+        const telegramUsername = "monthlysb"; 
+        
+        // Pesan otomatis yang bakal terkirim ke Telegram
+        const message = "i already said yes to being your boyfriend! ❤️"; 
+
+        function answerYes() {
+            alert("Thank you. You can text your boyfriend now ❤️");
+            // Mengarahkan ke chat Telegram
+            window.location.href = `https://t.me/${telegramUsername}?text=${encodeURIComponent(message)}`;
+        }
+
+        function moveButton() {
+            const noBtn = document.getElementById('noBtn');
+            
+            // Mengubah posisi tombol No secara acak biar ga bisa diklik
+            const x = Math.random() * (window.innerWidth - noBtn.offsetWidth - 50);
+            const y = Math.random() * (window.innerHeight - noBtn.offsetHeight - 50);
+            
+            noBtn.style.position = 'fixed';
+            noBtn.style.left = x + 'px';
+            noBtn.style.top = y + 'px';
+        }
+    </script>
+
+</body>
+</html>
